@@ -1,0 +1,55 @@
+---
+import ListItem from "@components/list/components/item/ListItem.astro";
+import List from "@components/list/List.astro";
+import Typography from "@components/typography";
+import { Image } from "astro:assets";
+---
+
+<section class="section">
+  <div class="container grid grid-cols-1 md:grid-cols-2 gap-6">
+    <div class="flex flex-col gap-12">
+      <div class="flex flex-col gap-2">
+        <Typography variant="display-medium"
+          >Muito além de um site: posicionamento que gera negócios</Typography
+        >
+        <Typography
+          >A diferença entre estar online e realmente ser encontrado</Typography
+        >
+      </div>
+      <List>
+        <ListItem
+          ><strong class="text-white"
+            >Análise de oportunidades no seu mercado:</strong
+          > avaliamos sua área de atuação, seus concorrentes e os termos com maior
+          potencial de retorno.</ListItem
+        >
+        <ListItem
+          ><strong class="text-white"
+            >Site feito para performar no Google desde o primeiro código:</strong
+          > nada de templates genéricos — cada detalhe é pensado para ranqueamento
+          e velocidade.</ListItem
+        >
+        <ListItem
+          ><strong class="text-white"
+            >Planejamento e criação de conteúdo SEO:</strong
+          > escolhemos as palavras-chave certas, definimos pautas estratégicas e
+          criamos conteúdos que performam.</ListItem
+        >
+        <ListItem
+          ><strong class="text-white"
+            >Publicação, monitoramento e ajustes contínuos</strong
+          >: medimos, testamos e otimizamos. O Google muda — e a sua estratégia
+          evolui com ele.</ListItem
+        >
+      </List>
+    </div>
+    <div class="flex items-center justify-center">
+      <Image
+        src="/palavras-chave.png"
+        width={590}
+        height={480}
+        alt="Desenvolvimento de palavras-chave"
+      />
+    </div>
+  </div>
+</section>

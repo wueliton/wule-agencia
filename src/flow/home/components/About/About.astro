@@ -1,0 +1,32 @@
+---
+import Typography from "@components/typography";
+import Card from "./components/Card/Card.astro";
+---
+
+<section class="section relative">
+  <div class="container">
+    <div class="flex flex-col gap-12">
+      <div class="flex flex-col gap-2 items-center text-center">
+        <Typography variant="display-medium">O que fazemos?</Typography>
+        <Typography
+          >Tudo que sua presença digital precisa para gerar resultados reais</Typography
+        >
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <Card icon="code-2-bold-duotone" title="Desenvolvimento">
+          Construímos sites sob medida, usando as tecnologias mais eficientes do
+          mercado, sempre com foco em performance, usabilidade e SEO técnico.
+        </Card>
+        <Card icon="target-line-duotone" title="Conteúdo que traz tráfego">
+          Nosso diferencial está aqui: desenvolvemos uma estratégia de conteúdo
+          voltada para o posicionamento orgânico no Google. Não é chute. É
+          pesquisa, análise e execução contínua.
+        </Card>
+        <Card icon="align-bottom-line-duotone" title="Palavras-chave">
+          Cuidamos do posicionamento das palavras-chave certas para o seu
+          negócio — e monitoramos tudo de perto.
+        </Card>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,10 @@
+---
+import cn from "@utils/cn";
+import type { ListProps } from "./types";
+
+type Props = ListProps;
+
+const { className } = Astro.props;
+---
+
+<ul class={cn("ml-8 flex flex-col gap-8", className)}><slot /></ul>

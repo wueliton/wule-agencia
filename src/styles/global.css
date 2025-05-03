@@ -1,0 +1,23 @@
+@import "tailwindcss";
+
+html, body {
+    @apply bg-slate-950 text-white scroll-smooth;
+}
+
+@theme inline {
+    --font-sans: var(--font-primary);
+    --font-secondary: var(--font-secondary);
+}
+
+@utility container {
+    margin-inline: auto;
+    @apply max-md:px-4;
+}
+
+strong {
+    @apply font-black;
+}
+
+@utility section {
+    @apply py-20;
+}

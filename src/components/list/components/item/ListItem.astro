@@ -1,0 +1,9 @@
+---
+import Icon from "@components/icon/Icon.astro";
+import Typography from "@components/typography";
+---
+
+<li class="flex gap-4 items-start">
+  <Icon name="check-square-bold" className="text-pink-400" size={32} />
+  <Typography><slot /></Typography>
+</li>

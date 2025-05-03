@@ -1,0 +1,10 @@
+---
+import { ButtonStyles } from "./styles";
+import type { IButtonProps } from "./types";
+
+type Props = IButtonProps;
+
+const { size, color } = Astro.props;
+---
+
+<button class={ButtonStyles({ size, color })}><slot /></button>

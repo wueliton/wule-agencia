@@ -1,0 +1,17 @@
+---
+import Typography from "@components/typography";
+import type { CardProps } from "./types";
+import Icon from "@components/icon/Icon.astro";
+
+type Props = CardProps;
+
+const { icon, title } = Astro.props;
+---
+
+<div
+  class="flex gap-4 flex-col p-8 bg-slate-900/60 rounded-xl border border-slate-800"
+>
+  <Icon name={icon} size={32} />
+  <Typography variant="title-small">{title}</Typography>
+  <Typography><slot /></Typography>
+</div>

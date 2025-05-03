@@ -1,0 +1,15 @@
+---
+import { Icon as AstroIcon } from "astro-icon/components";
+import type { IconProps } from "./types";
+
+type Props = IconProps;
+
+const { name, size, className } = Astro.props;
+---
+
+<AstroIcon
+  name={`solar:${name}`}
+  width={size}
+  height={size}
+  class={className}
+/>

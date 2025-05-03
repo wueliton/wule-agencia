@@ -1,0 +1,37 @@
+---
+import Typography from "@components/typography";
+import Card from "./components/Card/Card.astro";
+---
+
+<section class="section border-t border-slate-800 bg-slate-900/80">
+  <div class="container flex flex-col gap-8">
+    <div class="flex flex-col gap-2 text-center">
+      <Typography variant="display-medium">Como funciona</Typography>
+      <Typography
+        >Processo simples, transparente e com foco total em resultados</Typography
+      >
+    </div>
+    <div class="flex flex-col md:flex-row gap-6">
+      <div class="flex-1 flex flex-col gap-6">
+        <Card title="Análise de mercado" icon="minimalistic-magnifer-outline"
+          >Identificamos o que seus clientes estão buscando no Google — e onde
+          há oportunidades para seu negócio se destacar.</Card
+        >
+        <Card title="Planejamento de conteúdo" icon="text-bold"
+          >Definimos temas, palavras-chave e estrutura dos textos com base em
+          dados de busca reais.</Card
+        >
+      </div>
+      <div class="flex-1 flex flex-col gap-6 md:mt-20">
+        <Card title="Criação do site" icon="code-2-bold"
+          >Desenvolvemos um site técnico, enxuto e com estrutura perfeita para
+          SEO, velocidade e conversão.</Card
+        >
+        <Card title="Análise contínua" icon="infinity-bold"
+          >Medimos, testamos e otimizamos. O Google muda — e a sua estratégia
+          evolui com ele.</Card
+        >
+      </div>
+    </div>
+  </div>
+</section>

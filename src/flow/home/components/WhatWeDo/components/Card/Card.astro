@@ -1,0 +1,19 @@
+---
+import Typography from "@components/typography";
+import type { CardProps } from "./types";
+import Icon from "@components/icon/Icon.astro";
+
+type Props = CardProps;
+
+const { icon, title } = Astro.props;
+---
+
+<div
+  class="rounded-xl bg-slate-800/30 border border-slate-800 p-6 flex flex-col gap-4 items-start"
+>
+  <div class="p-2 rounded">
+    <Icon name={icon} className=" text-pink-500" size={32} />
+  </div>
+  <Typography variant="title-small">{title}</Typography>
+  <Typography><slot /></Typography>
+</div>

@@ -1,0 +1,36 @@
+---
+import Button from "@components/button/Button.astro";
+import Typography from "@components/typography";
+import { Image } from "astro:assets";
+---
+
+<section
+  class="section relative bg-linear-65 from-purple-500 to-pink-500 mt-20"
+>
+  <div class="container">
+    <Image
+      src="/wule-detail.png"
+      alt="Wule Details"
+      height={220}
+      width={170}
+      class="absolute top-0 left-1/2 -translate-x-1/2 -mt-34 select-none"
+    />
+    <div class="flex justify-center">
+      <div class="flex flex-col gap-8 content-between items-center">
+        <div class="flex-1 flex flex-col gap-2 max-w-2xl text-center">
+          <Typography variant="display-medium"
+            >Seu próximo cliente pode estar pesquisando agora</Typography
+          >
+          <Typography
+            >Fale com a gente, entenda as palavras-chave que podem trazer
+            clientes para sua empresa e comece a conquistar espaço no Google de
+            forma sólida.</Typography
+          >
+        </div>
+        <div>
+          <Button color="white">Começar agora</Button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,59 @@
+---
+import Icon from "@components/icon/Icon.astro";
+import Button from "../../components/button/Button.astro";
+import Typography from "../../components/typography";
+import SiteLayout from "../layouts/SiteLayout.astro";
+import About from "./components/About/About.astro";
+import ContactUs from "./components/ContactUs/ContactUs.astro";
+import WhatUs from "./components/WhatUs/WhatUs.astro";
+import WhatWeDo from "./components/WhatWeDo/WhatWeDo.astro";
+import { Image } from "astro:assets";
+import { config } from "src/config";
+---
+
+<SiteLayout>
+  <section class="relative section">
+    <div class="absolute inset-0">
+      <div
+        class="relative h-full w-full bg-red [&>div]:absolute [&>div]:h-full [&>div]:w-full [&>div]:bg-[radial-gradient(#222222_1px,transparent_1px)] [&>div]:[background-size:16px_16px] [&>div]:[mask-image:radial-gradient(ellipse_50%_50%_at_50%_50%,#000_70%,transparent_100%)]"
+      >
+        <div></div>
+      </div>
+    </div>
+    <div class="container text-center z-10 relative">
+      <div class="flex flex-col gap-8 items-center">
+        <Image src="/logo.svg" height={80} width={120} alt={config.name} />
+        <div class="max-w-3xl mx-auto flex gap-2 flex-col items-center">
+          <Typography variant="display-large"
+            >Assessoria de SEO para Empresas</Typography
+          >
+          <Typography className="mx-4">
+            Criamos sites modernos, rápidos e otimizados com foco total em
+            resultados orgânicos. Você investe em presença online — nós
+            entregamos tráfego qualificado.
+          </Typography>
+        </div>
+        <Button>Entrar em contato</Button>
+      </div>
+    </div>
+    <div class="absolute bottom-0 left-1/2 -translate-x-1/2">
+      <Icon
+        name="mouse-minimalistic-linear"
+        size={32}
+        className="text-white/40"
+      />
+    </div>
+  </section>
+  <div>
+    <Image
+      src="/home-banner.png"
+      height={768}
+      width={2880}
+      alt="Assessoria de SEO para Empresas"
+    />
+  </div>
+  <About />
+  <WhatWeDo />
+  <WhatUs />
+  <ContactUs />
+</SiteLayout>
