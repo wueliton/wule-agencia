@@ -13,7 +13,10 @@
     "paths": {
       "@components/*": ["src/components/*"],
       "@flow/*": ["src/flow/*"],
-      "@utils/*": ["src/utils/*"]
+      "@utils/*": ["src/utils/*"],
+      "@assets/*": ["src/assets/*"],
+      "@models/*": ["src/model/*"],
+      "@services/*": ["src/services/*"]
     }
   }
 }

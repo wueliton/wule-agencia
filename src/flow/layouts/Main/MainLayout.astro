@@ -1,0 +1,34 @@
+---
+import "../../../styles/global.css";
+import Footer from "@components/footer/Footer.astro";
+import { config } from "src/config";
+
+type Props = MainLayoutProps;
+
+const { title, description, keywords } = Astro.props;
+---
+
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href={`/${config.base}/favicon.svg`}
+    />
+    <meta name="viewport" content="width=device-width" />
+    <title>{title ?? config.name}</title>
+    <meta name="description" content={description} />
+    <meta name="keywords" content={keywords.join(", ")} />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body
+    ><slot />
+    <Footer /></body
+  >
+</html>

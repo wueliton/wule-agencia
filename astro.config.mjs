@@ -1,29 +1,25 @@
 // @ts-check
+// @ts-ignore
 import { defineConfig, fontProviders } from "astro/config";
+// @ts-ignore
 import tailwindcss from "@tailwindcss/vite";
 import react from "@astrojs/react";
 import icon from "astro-icon";
 
 // https://astro.build/config
 export default defineConfig({
+  site: "https://wueliton.github.io",
+  base: "wule-agencia",
   vite: {
     plugins: [tailwindcss()],
   },
+  build: {
+    assets: "assets",
+  },
+  output: "static",
+  compressHTML: true,
   integrations: [react(), icon()],
   experimental: {
-    fonts: [
-      {
-        provider: fontProviders.google(),
-        name: "Inter",
-        cssVariable: "--font-primary",
-        weights: [300, 500, 700],
-      },
-      {
-        provider: fontProviders.google(),
-        name: "DM Sans",
-        cssVariable: "--font-secondary",
-        weights: [100, 200, 300, 400, 500, 600, 700, 800, 900],
-      },
-    ],
+    responsiveImages: true,
   },
 });

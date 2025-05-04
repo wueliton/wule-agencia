@@ -2,16 +2,18 @@
 import Icon from "@components/icon/Icon.astro";
 import Button from "../../components/button/Button.astro";
 import Typography from "../../components/typography";
-import SiteLayout from "../layouts/SiteLayout.astro";
 import About from "./components/About/About.astro";
 import ContactUs from "./components/ContactUs/ContactUs.astro";
 import WhatUs from "./components/WhatUs/WhatUs.astro";
 import WhatWeDo from "./components/WhatWeDo/WhatWeDo.astro";
-import { Image } from "astro:assets";
 import { config } from "src/config";
+import MainLayout from "@flow/layouts/Main/MainLayout.astro";
+import homeBanner from "@assets/images/home-banner.png";
+import logo from "@assets/images/logo.png";
+import Image from "@components/image/Image.astro";
 ---
 
-<SiteLayout>
+<MainLayout description={config.description} keywords={config.keywords}>
   <section class="relative section">
     <div class="absolute inset-0">
       <div
@@ -22,7 +24,9 @@ import { config } from "src/config";
     </div>
     <div class="container text-center z-10 relative">
       <div class="flex flex-col gap-8 items-center">
-        <Image src="/logo.svg" height={80} width={120} alt={config.name} />
+        <div class="w-[120px] h-[80]">
+          <Image src={logo} alt={config.name} />
+        </div>
         <div class="max-w-3xl mx-auto flex gap-2 flex-col items-center">
           <Typography variant="display-large"
             >Assessoria de SEO para Empresas</Typography
@@ -33,7 +37,9 @@ import { config } from "src/config";
             entregamos tráfego qualificado.
           </Typography>
         </div>
-        <Button>Entrar em contato</Button>
+        <Button aria-label="Clique para entrar em contato com a agência Wule"
+          >Entrar em contato</Button
+        >
       </div>
     </div>
     <div class="absolute bottom-0 left-1/2 -translate-x-1/2">
@@ -45,15 +51,10 @@ import { config } from "src/config";
     </div>
   </section>
   <div>
-    <Image
-      src="/home-banner.png"
-      height={768}
-      width={2880}
-      alt="Assessoria de SEO para Empresas"
-    />
+    <Image src={homeBanner} alt="Assessoria de SEO para Empresas" />
   </div>
   <About />
   <WhatWeDo />
   <WhatUs />
   <ContactUs />
-</SiteLayout>
+</MainLayout>

@@ -7,8 +7,8 @@ const ButtonStyles = tv({
       md: "",
     },
     color: {
-      primary: "bg-pink-500 text-white hover:bg-pink-700",
-      white: "bg-white text-pink-500 hover:bg-gray-100",
+      primary: "bg-[#fd1468] text-white hover:bg-pink-700",
+      white: "bg-white text-[#fd1468] hover:bg-gray-100",
     },
   },
   defaultVariants: {
