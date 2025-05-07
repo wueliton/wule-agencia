@@ -1,8 +1,8 @@
 ---
 import Button from "@components/button/Button.astro";
 import Typography from "@components/typography";
-import Image from "@components/image/Image.astro";
 import wuleDetail from "@assets/images/wule-detail.png";
+import { Picture } from "astro:assets";
 ---
 
 <section
@@ -12,7 +12,7 @@ import wuleDetail from "@assets/images/wule-detail.png";
     <div
       class="absolute top-0 left-1/2 -translate-x-1/2 -mt-34 select-none w-[170px] h-[220px]"
     >
-      <Image src={wuleDetail} alt="Wule Details" />
+      <Picture src={wuleDetail} alt="Wule Details" />
     </div>
     <div class="flex justify-center">
       <div class="flex flex-col gap-8 content-between items-center">

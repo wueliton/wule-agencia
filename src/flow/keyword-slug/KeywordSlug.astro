@@ -1,0 +1,31 @@
+---
+import useGetKeywords from "@services/useGetKeywords";
+import type { KeywordSlugProps } from "./types";
+import MainLayout from "@flow/layouts/Main/MainLayout.astro";
+import Header from "@components/header/Header.astro";
+import Typography from "@components/typography";
+
+type Props = KeywordSlugProps;
+
+const { slug } = Astro.props;
+const { getKeyword } = useGetKeywords();
+const { title, description, keywords, keywordcontent } = getKeyword(slug) ?? {};
+const parsedKeywords = Array.isArray(keywords) ? keywords : [keywords ?? ""];
+---
+
+<MainLayout
+  title={title}
+  description={description ?? ""}
+  keywords={parsedKeywords}
+>
+  <Header />
+  <section class="section">
+    <div class="container max-w-3xl flex flex-col gap-8">
+      <div class="flex flex-col gap-2">
+        <Typography variant="display-large">{title}</Typography>
+        <Typography variant="title-small">{description}</Typography>
+      </div>
+      <div set:html={keywordcontent} />
+    </div>
+  </section>
+</MainLayout>

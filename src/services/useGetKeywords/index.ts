@@ -1,12 +1,18 @@
 import keywords from "@models/keywords.json";
+import slufigy from "@utils/slugify";
+import type { GetStaticPathsResult } from "astro";
 
 function useGetKeywords() {
   const getKeywords = () => {
-    return keywords;
+    return keywords.map((keyword) => ({
+      ...keyword,
+      slug: slufigy(keyword.title),
+    }));
   };
 
   const getKeyword = (slug: string) => {
-    return keywords.find((item) => item.title);
+    const allKeywords = getKeywords();
+    return allKeywords.find((keyword) => keyword.slug === slug);
   };
 
   const getHeroKeyword = () => {
@@ -21,12 +27,22 @@ function useGetKeywords() {
     return keywords.splice(4, 0);
   };
 
+  const getStaticPathsKeywords = (): GetStaticPathsResult => {
+    const allKeywords = getKeywords();
+    return allKeywords.map(({ slug }) => ({
+      params: {
+        slug,
+      },
+    }));
+  };
+
   return {
     getKeywords,
     getKeyword,
     getHeroKeyword,
     getDestaqs,
     getRecentsKeywords,
+    getStaticPathsKeywords,
   };
 }
 

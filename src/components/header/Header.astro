@@ -1,13 +1,13 @@
 ---
 import Button from "@components/button/Button.astro";
 import logo from "@assets/images/logo.png";
-import Image from "@components/image/Image.astro";
+import { Picture } from "astro:assets";
 ---
 
 <header class="bg-slate-900 sticky top-0">
   <div class="container flex justify-between py-4 items-center">
     <div class="w-[120px] h-[80]">
-      <Image src={logo} alt="Wule Agência Digital" />
+      <Picture src={logo} alt="Wule Agência Digital" width={120} height={80} />
     </div>
     <Button aria-label="">Começar agora</Button>
   </div>

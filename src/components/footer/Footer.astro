@@ -1,14 +1,14 @@
 ---
 import { config } from "src/config";
-import Image from "@components/image/Image.astro";
 import logo from "@assets/images/logo.png";
+import { Picture } from "astro:assets";
 ---
 
 <section class="py-10">
   <div class="container flex justify-between">
     <div class="flex items-center gap-4">
       <div class="w-[80px] h-[34px]">
-        <Image src={logo} alt={config.name} />
+        <Picture src={logo} alt={config.name} />
       </div>
       <p class="text-white/60 text-xs">
         Agência Digital Wule - 2025. Todos os direitos reservados.

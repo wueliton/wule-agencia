@@ -1,0 +1,19 @@
+---
+import KeywordSlug from "@flow/keyword-slug/KeywordSlug.astro";
+import useGetKeywords from "@services/useGetKeywords";
+import type { GetStaticPaths, InferGetStaticParamsType } from "astro";
+
+export const getStaticPaths = (() => {
+  const { getStaticPathsKeywords } = useGetKeywords();
+  const allKeywords = getStaticPathsKeywords();
+  return allKeywords;
+}) satisfies GetStaticPaths;
+
+type Params = {
+  slug: string;
+};
+
+const { slug } = Astro.params as Params;
+---
+
+<KeywordSlug slug={slug} />

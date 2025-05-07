@@ -2,8 +2,8 @@
 import ListItem from "@components/list/components/item/ListItem.astro";
 import List from "@components/list/List.astro";
 import Typography from "@components/typography";
-import Image from "@components/image/Image.astro";
 import palavrasChave from "@assets/images/palavras-chave.png";
+import { Picture } from "astro:assets";
 ---
 
 <section class="section">
@@ -45,7 +45,7 @@ import palavrasChave from "@assets/images/palavras-chave.png";
       </List>
     </div>
     <div class="flex items-center justify-center">
-      <Image
+      <Picture
         src={palavrasChave}
         width={590}
         height={480}

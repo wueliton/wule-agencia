@@ -10,7 +10,7 @@ import { config } from "src/config";
 import MainLayout from "@flow/layouts/Main/MainLayout.astro";
 import homeBanner from "@assets/images/home-banner.png";
 import logo from "@assets/images/logo.png";
-import Image from "@components/image/Image.astro";
+import { Picture } from "astro:assets";
 ---
 
 <MainLayout description={config.description} keywords={config.keywords}>
@@ -24,8 +24,8 @@ import Image from "@components/image/Image.astro";
     </div>
     <div class="container text-center z-10 relative">
       <div class="flex flex-col gap-8 items-center">
-        <div class="w-[120px] h-[80]">
-          <Image src={logo} alt={config.name} />
+        <div class="w-[120px]">
+          <Picture src={logo} alt={config.name} width={180} height={75} />
         </div>
         <div class="max-w-3xl mx-auto flex gap-2 flex-col items-center">
           <Typography variant="display-large"
@@ -50,8 +50,14 @@ import Image from "@components/image/Image.astro";
       />
     </div>
   </section>
-  <div>
-    <Image src={homeBanner} alt="Assessoria de SEO para Empresas" />
+  <div class="min-h-[280px] [&_img]:min-h-[280px]">
+    <Picture
+      src={homeBanner}
+      alt="Assessoria de SEO para Empresas"
+      priority={true}
+      loading="eager"
+      layout="full-width"
+    />
   </div>
   <About />
   <WhatWeDo />

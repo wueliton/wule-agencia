@@ -9,7 +9,7 @@
     "preview": "astro preview",
     "astro": "astro",
     "generate:icons": "node utils/generate-icons.js",
-    "publish": "gh-pages -d dist"
+    "publish": "astro build && gh-pages -d dist"
   },
   "dependencies": {
     "@astrojs/react": "^4.2.7",

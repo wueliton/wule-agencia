@@ -1,10 +1,8 @@
 ---
 import Header from "@components/header/Header.astro";
-import Image from "@components/image/Image.astro";
 import Typography from "@components/typography";
 import MainLayout from "@flow/layouts/Main/MainLayout.astro";
 import useGetKeywords from "@services/useGetKeywords";
-import slufigy from "@utils/slugify";
 import { config } from "src/config";
 
 const { getKeywords } = useGetKeywords();
@@ -20,7 +18,7 @@ const keywords = getKeywords();
           keywords.map((keyword) => (
             <div class="py-8">
               <div class="flex flex-col gap-2">
-                <a href={slufigy(keyword.title)}>
+                <a href={keyword.slug}>
                   <Typography variant="title-small">{keyword.title}</Typography>
                 </a>
                 <Typography>{keyword.description}</Typography>
