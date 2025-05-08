@@ -1,0 +1,30 @@
+name: Deploy Wule Agência Digital
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    name: Deploy Wule via FTP
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Atualizar o código
+        uses: actions/checkout@v2
+
+      - name: Construir o projeto
+        run: |
+          npm install
+          npm run build
+
+      - name: Enviar os arquivos via FTP
+        uses: locaweb/ftp-deploy@1.0.0
+        with:
+          host: ${{ secrets.DEPLOY_HOST }}
+          user: ${{ secrets.DEPLOY_USERNAME }}
+          password: ${{ secrets.DEPLOY_PASSWORD }}
+          localDir: ./dist
+          remoteDir: public_html
+          options: "--delete"

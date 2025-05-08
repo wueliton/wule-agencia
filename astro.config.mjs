@@ -8,8 +8,6 @@ import icon from "astro-icon";
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://wueliton.github.io",
-  base: "wule-agencia",
   vite: {
     plugins: [tailwindcss()],
   },
