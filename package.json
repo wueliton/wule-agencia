@@ -4,7 +4,7 @@
   "version": "0.0.1",
   "homepage": "https://wueliton.github.io/wule-agencia",
   "scripts": {
-    "dev": "astro dev",
+    "dev": "concurrently \"php -S localhost:8000 -t api\" \"astro dev\"",
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
@@ -26,6 +26,7 @@
   "devDependencies": {
     "@iconify-json/solar": "^1.2.2",
     "@iconify/react": "^6.0.0",
+    "concurrently": "^9.1.2",
     "gh-pages": "^6.3.0"
   }
 }

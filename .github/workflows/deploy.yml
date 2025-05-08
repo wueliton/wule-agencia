@@ -19,7 +19,7 @@ jobs:
           npm install
           npm run build
 
-      - name: Enviar os arquivos via FTP
+      - name: Enviar os arquivos do front via FTP
         uses: locaweb/ftp-deploy@1.0.0
         with:
           host: ${{ secrets.DEPLOY_HOST }}
@@ -27,4 +27,14 @@ jobs:
           password: ${{ secrets.DEPLOY_PASSWORD }}
           localDir: ./dist
           remoteDir: public_html
+          options: "--delete"
+
+      - name: Envia arquivos do back via FTP
+        uses: locaweb/ftp-deploy@1.0.0
+        with:
+          host: ${{ secrets.DEPLOY_HOST }}
+          user: ${{ secrets.DEPLOY_USERNAME }}
+          password: ${{ secrets.DEPLOY_PASSWORD }}
+          localDir: ./api
+          remoteDir: public_html/api
           options: "--delete"
