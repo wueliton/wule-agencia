@@ -27,6 +27,10 @@ const TypographyOptions = {
     tag: "p",
     className: "text-sm text-white/80 font-light",
   },
+  caption: {
+    tag: "p",
+    className: "text-xs",
+  },
 };
 
 export { TypographyOptions };

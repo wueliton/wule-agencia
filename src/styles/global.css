@@ -21,3 +21,7 @@ strong {
 @utility section {
     @apply py-20;
 }
+
+p + p {
+    @apply mt-3;
+}
