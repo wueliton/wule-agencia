@@ -6,6 +6,8 @@ const config = {
     "Criamos sites modernos, rápidos e otimizados com foco total em resultados orgânicos. Você investe em presença online — nós entregamos tráfego qualificado.",
   keywords: [],
   recaptcha: "6LeNaDQrAAAAAILJbsqx7SdIXgdHJT2KyNto2z4l",
+  apiBaseUrl: "https://agenciawule.com.br",
+  recaptchaToken: "6LeNaDQrAAAAAILJbsqx7SdIXgdHJT2KyNto2z4l",
 };
 
 export { config };
