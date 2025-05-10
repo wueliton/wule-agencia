@@ -16,7 +16,7 @@ jobs:
 
       - name: Construir o projeto
         run: |
-          npm install
+          npm install --legacy-peer-deps
           npm run build
 
       - name: Enviar os arquivos do front via FTP
