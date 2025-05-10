@@ -18,23 +18,12 @@ $app->setBasePath("/api");
 
 $app->addBodyParsingMiddleware();
 
-$app->addRoutingMiddleware();
-
-$app->addErrorMiddleware(true, true, true);
-
 // Rota para envio de e-mail
 $app->post('/contact', [new EmailController(), 'sendEmail']);
 
 $app->get('/health', [new HealthController(), 'checkHealth']);
 
-$app->map(['GET', 'POST', 'PUT', 'DELETE', 'PATCH'], '/{routes:.+}', function ($request, $response) {
-    $data = array('response' => 'Not Found', 'statusCode' => 404);
-    $payload = json_encode($data);
-
-    $response->getBody()->write($payload);
-    return $response->withHeader('Content-Type', 'application/json')
-        ->withStatus(404);
-});
+$app->addErrorMiddleware(true, true, true);
 
 // Rodar a aplicação
 $app->run();

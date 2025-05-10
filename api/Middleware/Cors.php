@@ -10,12 +10,12 @@ class Cors
     {
         $env = $_ENV["APP_ENV"];
         $isDevEnv = $env === "development";
-        $origins = $isDevEnv ? ["http://localhost"] : ["https://agenciawule.com.br"];
+        $origins = $isDevEnv ? ["*"] : ["*"];
 
         return new CorsMiddleware([
             "origin" => $origins,
-            "methods" => ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
-            "headers.allow" => ["Content-Type", "Authorization"],
+            "methods" => ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
+            "headers.allow" => ["Content-Type", "Authorization", "Host"],
             "headers.expose" => [],
             "credentials" => true,
             "cache" => 0,

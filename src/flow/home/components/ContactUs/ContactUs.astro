@@ -1,5 +1,5 @@
 ---
-import Button from "@components/button/Button.astro";
+import Button from "@components/button";
 import Typography from "@components/typography";
 import wuleDetail from "@assets/images/wule-detail.png";
 import { Picture } from "astro:assets";
@@ -28,6 +28,8 @@ import { Picture } from "astro:assets";
         </div>
         <div>
           <Button
+            as="a"
+            href="/contato"
             aria-label="Clique para entrar em contato com a Wule"
             color="white">Começar agora</Button
           >
