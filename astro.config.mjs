@@ -1,6 +1,6 @@
 // @ts-check
 // @ts-ignore
-import { defineConfig, fontProviders } from "astro/config";
+import { defineConfig } from "astro/config";
 // @ts-ignore
 import tailwindcss from "@tailwindcss/vite";
 import react from "@astrojs/react";
