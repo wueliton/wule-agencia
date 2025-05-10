@@ -5,8 +5,8 @@ html, body {
 }
 
 @theme inline {
-    --font-sans: "Inter", sans-serif;
-    --font-secondary: "DM Sans", sans-serif;
+    --font-sans: var(--font-primary);
+    --font-secondary: var(--font-secondary);
 }
 
 @utility container {
