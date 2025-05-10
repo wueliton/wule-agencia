@@ -4,6 +4,8 @@ import type { KeywordSlugProps } from "./types";
 import MainLayout from "@flow/layouts/Main/MainLayout.astro";
 import Header from "@components/header/Header.astro";
 import Typography from "@components/typography";
+import KeywordsCarousel from "./components/KeywordsCarousel";
+import "swiper/css";
 
 type Props = KeywordSlugProps;
 
@@ -11,6 +13,8 @@ const { slug } = Astro.props;
 const { getKeyword } = useGetKeywords();
 const { title, description, keywords, keywordcontent } = getKeyword(slug) ?? {};
 const parsedKeywords = Array.isArray(keywords) ? keywords : [keywords ?? ""];
+const { getKeywords } = useGetKeywords();
+const allKeywords = getKeywords();
 ---
 
 <MainLayout
@@ -19,13 +23,26 @@ const parsedKeywords = Array.isArray(keywords) ? keywords : [keywords ?? ""];
   keywords={parsedKeywords}
 >
   <Header />
-  <section class="section">
-    <div class="container max-w-3xl flex flex-col gap-8">
+  <section class="section flex flex-col gap-12">
+    <div class="container max-w-3xl flex flex-col gap-14">
       <div class="flex flex-col gap-2">
         <Typography variant="display-large">{title}</Typography>
         <Typography variant="title-small">{description}</Typography>
       </div>
-      <div set:html={keywordcontent} />
+      <div
+        class="[&_p+p]:mb-2 [&_h2]:text-2xl [&_h2]:mt-6 [&_h2]:mb-2 [&_p]:font-light"
+        set:html={keywordcontent}
+      />
+    </div>
+    <div class="flex flex-col gap-4">
+      <div class="container max-w-3xl">
+        <Typography variant="display-medium"
+          >Você também pode gostar de:</Typography
+        >
+      </div>
+      <div>
+        <KeywordsCarousel keywords={allKeywords} client:load />
+      </div>
     </div>
   </section>
 </MainLayout>

@@ -24,6 +24,7 @@
     "react-dom": "^19.1.0",
     "react-google-recaptcha-v3": "^1.10.1",
     "react-hook-form": "^7.56.3",
+    "swiper": "^11.2.6",
     "tailwind-variants": "^1.0.0",
     "tailwindcss": "^4.1.4",
     "yup": "^1.6.1"
